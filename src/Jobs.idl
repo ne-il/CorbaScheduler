@@ -1,0 +1,33 @@
+module jobs {
+
+
+    struct Struct1 {
+        long time;
+    };
+
+    struct Struct2 {
+        long time;
+    };
+
+    struct RequestDescriptor {
+        string interf;
+        string class;
+        string method;
+        sequence <any> params;
+        long return_value;
+    };
+
+    interface GSched {
+        oneway void sendRequest( in RequestDescriptor req );
+    };
+
+    interface A {
+        oneway void run( in any t );
+    };
+
+    interface B {
+        oneway void run( in any t );
+        any echo( in any t );
+    };
+
+};
